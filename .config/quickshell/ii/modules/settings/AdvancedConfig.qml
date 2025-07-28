@@ -15,7 +15,7 @@ ContentPage {
             ConfigSwitch {
                 text: Translation.tr("Shell & utilities")
                 checked: Config.options.appearance.wallpaperTheming.enableAppsAndShell
-                leftPadding: -40    // Move to prevent text and button overlap in Japanese
+                leftPadding: -35    // Move to prevent text and button overlap in Japanese
                 onCheckedChanged: {
                     Config.options.appearance.wallpaperTheming.enableAppsAndShell = checked;
                 }
