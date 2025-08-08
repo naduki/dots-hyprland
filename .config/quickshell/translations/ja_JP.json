@@ -281,7 +281,7 @@
   "Enter tags, or \"%1\" for commands": "タグを入力、または\"%1\"でコマンドを実行",
   "%1 queries pending": "%1個のクエリが保留中",
   "API key:\n\n```txt\n%1\n```": "APIキー:\n\n```txt\n%1\n```",
-  "Uptime: %1": "稼働時間: %1",
+  "Up: %1": "稼働: %1",
   "%1 Safe Storage": "%1 セーフストレージ",
   "%1 does not require an API key": "%1はAPIキーを必要としません",
   "Temperature: %1": "温度: %1",
