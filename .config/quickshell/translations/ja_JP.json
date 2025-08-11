@@ -325,5 +325,19 @@
   "Sidebars": "サイドバー",
   "Keep right sidebar loaded": "右サイドバーを常に読み込む",
   "Night Light | Right-click to toggle Auto mode": "ナイトライト | 右クリックで自動モード切り替え",
-  "EasyEffects | Right-click to configure": "EasyEffects | 右クリックで設定"
+  "EasyEffects | Right-click to configure": "EasyEffects | 右クリックで設定",
+  "Timer": "タイマー",
+  "Long break": "長い休憩",
+  "Break": "休憩",
+  "Focus": "集中",
+  "Pause": "一時停止",
+  "Start": "開始",
+  "Resume": "再開",
+  "Reset": "リセット",
+  "Lap": "ラップ",
+  "Pomodoro": "ポモドーロ",
+  "Stopwatch": "ストップウォッチ",
+  "🌿 Long break: %1 minute": "🌿 長い休憩: %1 分",
+  "☕ Break: %1 minutes": "☕ 休憩: %1 分",
+  "🔴 Focus: %1 minutes": "🔴 集中: %1 分"
 }
