@@ -26,8 +26,18 @@ Scope {
     property list<real> visualizerPoints: []
 
     property bool hasPlasmaIntegration: false
+    Process {
+        id: plasmaIntegrationAvailabilityCheckProc
+        running: true
+        command: ["bash", "-c", "command -v plasma-browser-integration-host"]
+        onExited: (exitCode, exitStatus) => {
+            root.hasPlasmaIntegration = (exitCode === 0);
+        }
+    }
     function isRealPlayer(player) {
-        // return true
+        if (!Config.options.media.filterDuplicatePlayers) {
+            return true;
+        }
         return (
             // Remove unecessary native buses from browsers if there's plasma integration
             !(hasPlasmaIntegration && player.dbusName.startsWith('org.mpris.MediaPlayer2.firefox')) &&
@@ -88,18 +98,25 @@ Scope {
 
     Loader {
         id: mediaControlsLoader
-        active: false
+        active: GlobalStates.mediaControlsOpen
+        onActiveChanged: {
+            if (!mediaControlsLoader.active && Mpris.players.values.filter(player => isRealPlayer(player)).length === 0) {
+                GlobalStates.mediaControlsOpen = false;
+            }
+        }
 
         sourceComponent: PanelWindow {
             id: mediaControlsRoot
             visible: true
 
+            exclusionMode: ExclusionMode.Ignore
             exclusiveZone: 0
-            implicitWidth: (
-                (mediaControlsRoot.screen.width / 2) // Middle of screen
-                    - (osdWidth / 2)                 // Dodge OSD
-                    - (widgetWidth / 2)              // Account for widget width
-            ) * 2
+            margins {
+                top: Appearance.sizes.barHeight
+                bottom: Appearance.sizes.barHeight
+                left: (mediaControlsRoot.screen.width / 2) - (osdWidth / 2) - widgetWidth
+            }
+            implicitWidth: root.widgetWidth
             implicitHeight: playerColumnLayout.implicitHeight
             color: "transparent"
             WlrLayershell.namespace: "quickshell:mediaControls"
@@ -115,12 +132,7 @@ Scope {
 
             ColumnLayout {
                 id: playerColumnLayout
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                x: (mediaControlsRoot.screen.width / 2)  // Middle of screen
-                    - (osdWidth / 2)                     // Dodge OSD
-                    - (widgetWidth)                      // Account for widget width
-                    + (Appearance.sizes.elevationMargin) // It's fine for shadows to overlap
+                anchors.fill: parent
                 spacing: -Appearance.sizes.elevationMargin // Shadow overlap okay
 
                 Repeater {
@@ -160,11 +172,7 @@ Scope {
         description: "Toggles media controls on press"
 
         onPressed: {
-            if (!mediaControlsLoader.active && Mpris.players.values.filter(player => isRealPlayer(player)).length === 0) {
-                return;
-            }
-            mediaControlsLoader.active = !mediaControlsLoader.active;
-            if(mediaControlsLoader.active) Notifications.timeoutAll();
+            GlobalStates.mediaControlsOpen = !GlobalStates.mediaControlsOpen;
         }
     }
     GlobalShortcut {
@@ -172,8 +180,7 @@ Scope {
         description: "Opens media controls on press"
 
         onPressed: {
-            mediaControlsLoader.active = true;
-            Notifications.timeoutAll();
+            GlobalStates.mediaControlsOpen = true;
         }
     }
     GlobalShortcut {
@@ -181,7 +188,7 @@ Scope {
         description: "Closes media controls on press"
 
         onPressed: {
-            mediaControlsLoader.active = false;
+            GlobalStates.mediaControlsOpen = false;
         }
     }
 
