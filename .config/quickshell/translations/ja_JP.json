@@ -352,7 +352,7 @@
   "Set the tool to use for the model.": "モデルで使用するツールを設定します。",
   "Keep right sidebar loaded": "右サイドバーを読み込んだままにする",
   "Thought": "考え",
-  "Performance Profile toggle": "パフォーマンスプロファイル切替",
+  "Performance Profile toggle": "性能プロファイル切替",
   "... and %1 more": "... ほか %1 件",
   "Hi there! First things first...": "やあ！ まずは最初に...",
   "Reject": "拒否",
@@ -382,5 +382,10 @@
   "Place at the bottom/right": "下部/右側に配置",
   "**Pricing**: Free tier available with limited rates. See https://docs.github.com/en/billing/concepts/product-billing/github-models\n\n**Instructions**: Generate a GitHub personal access token with Models permission, then set as API key here\n\n**Note**: To use this you will have to set the temperature parameter to 1": "**料金**: 制限付きレートで無料枠が利用可能。詳細は https://docs.github.com/en/billing/concepts/product-billing/github-models を参照\n\n**手順**: Models権限を持つGitHub個人アクセストークンを生成し、ここでAPIキーとして設定してください\n\n**注意**: これを使用するには、temperatureパラメータを1に設定する必要があります",
   "Horizontal": "水平",
-  "Vertical": "垂直"
+  "Vertical": "垂直",
+  "Shell conflicts killer": "Shell conflicts killer",
+  "Conflicts with the shell's system tray implementation": "シェルのシステムトレイの実装と競合します",
+  "Conflicts with the shell's notification implementation": "シェルの通知の実装と競合します",
+  "Kill conflicting programs?": "競合するプログラムを終了しますか？",
+  "Always": "常に"
 }
