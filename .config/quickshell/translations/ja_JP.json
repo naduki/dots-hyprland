@@ -320,7 +320,7 @@
   "System uptime:": "システム稼働時間:",
   "Disable tools": "ツールを無効化",
   "Usage: %1load CHAT_NAME": "使用方法: %1load CHAT_NAME",
-  "Performance Profile toggle": "パフォーマンスプロファイル切替",
+  "Performance Profile toggle": "性能プロファイル切替",
   "Your package manager is running": "パッケージマネージャーが実行中です",
   "Gives the model search capabilities (immediately)": "モデルに検索機能を付与（即時）",
   "Tint app icons": "アプリアイコンに色付け",
