@@ -28,7 +28,7 @@ Variants {
         // Hide when fullscreen
         property list<HyprlandWorkspace> workspacesForMonitor: Hyprland.workspaces.values.filter(workspace=>workspace.monitor && workspace.monitor.name == monitor.name)
         property var activeWorkspaceWithFullscreen: workspacesForMonitor.filter(workspace=>((workspace.toplevels.values.filter(window=>window.wayland.fullscreen)[0] != undefined) && workspace.active))[0]
-        visible: !(activeWorkspaceWithFullscreen != undefined)
+        visible: (!(activeWorkspaceWithFullscreen != undefined)) || !Config?.options.background.hideWhenFullscreen
 
         // Workspaces
         property HyprlandMonitor monitor: Hyprland.monitorFor(modelData)
@@ -213,7 +213,7 @@ Variants {
             ColumnLayout {
                 id: clockColumn
                 anchors.centerIn: parent
-                spacing: 0
+                spacing: 6
 
                 StyledText {
                     Layout.fillWidth: true
@@ -243,6 +243,7 @@ Variants {
                     text: DateTime.date
                 }
                 StyledText {
+                    Layout.fillWidth: true
                     horizontalAlignment: bgRoot.textHorizontalAlignment
                     font {
                         family: Appearance.font.family.expressive
