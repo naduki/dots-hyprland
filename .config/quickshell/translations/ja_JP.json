@@ -387,5 +387,6 @@
   "Online | Google's model\nGoogle's state-of-the-art multipurpose model that excels at coding and complex reasoning tasks.": "オンライン | Googleのモデル\nコーディングと高度な推論に優れた最先端の汎用モデル。",
   "Depends on workspace": "ワークスペースに依存",
   "Online | %1's model | Delivers fast, responsive and well-formatted answers. Disadvantages: not very eager to do stuff; might make up unknown function calls": "オンライン | %1 のモデル | 高速で整った応答を提供。欠点: 積極性が低い・未知の関数呼び出しを捏造する可能性",
-  "Kill conflicting programs?": "競合するプログラムを終了しますか？"
+  "Kill conflicting programs?": "競合するプログラムを終了しますか？",
+  "Refreshing (manually triggered)": "更新中（手動トリガー）"
 }
