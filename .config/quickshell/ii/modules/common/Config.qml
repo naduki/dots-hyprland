@@ -103,7 +103,7 @@ Singleton {
                     // Prevent sudden bangs
                     property bool enable: true
                     property real maxAllowedIncrease: 10
-                    property real maxAllowed: 90 // Realistically should already provide some protection when it's 99...
+                    property real maxAllowed: 99
                 }
             }
 
@@ -162,6 +162,8 @@ Singleton {
                 }
                 property JsonObject tray: JsonObject {
                     property bool monochromeIcons: true
+                    property bool invertPinnedItems: false // Makes the below a whitelist for the tray and blacklist for the pinned area
+                    property list<string> pinnedItems: [ "Fcitx" ]
                 }
                 property JsonObject workspaces: JsonObject {
                     property bool monochromeIcons: true
@@ -264,6 +266,7 @@ Singleton {
                 property list<string> excludedSites: ["quora.com"]
                 property bool sloppy: false // Uses levenshtein distance based scoring instead of fuzzy sort. Very weird.
                 property JsonObject prefix: JsonObject {
+                    property bool showDefaultActionsWithoutPrefix: true
                     property string action: "/"
                     property string clipboard: ";"
                     property string emojis: ":"
