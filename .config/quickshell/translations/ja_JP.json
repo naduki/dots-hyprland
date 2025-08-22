@@ -124,7 +124,6 @@
   "About": "このアプリについて",
   "Services": "サービス",
   "Style": "スタイル",
-  "Edit config": "設定を編集",
   "Colors & Wallpaper": "色と壁紙",
   "Light": "ライト",
   "Dark": "ダーク",
@@ -388,5 +387,8 @@
   "Depends on workspace": "ワークスペースに依存",
   "Online | %1's model | Delivers fast, responsive and well-formatted answers. Disadvantages: not very eager to do stuff; might make up unknown function calls": "オンライン | %1 のモデル | 高速で整った応答を提供。欠点: 積極性が低い・未知の関数呼び出しを捏造する可能性",
   "Kill conflicting programs?": "競合するプログラムを終了しますか？",
-  "Refreshing (manually triggered)": "更新中（手動トリガー）"
+  "Refreshing (manually triggered)": "更新中（手動トリガー）",
+  "Open the shell config file.\nIf the button doesn't work or doesn't open in your favorite editor,\nyou can manually open ~/.config/illogical-impulse/config.json": "シェル設定ファイルを開きます。\nボタンが動作しないか、お気に入りのエディターで開かない場合は、\n手動で ~/.config/illogical-impulse/config.json を開いてください",
+  "Config file": "設定ファイル",
+  "Attach a file. Only works with Gemini.": "ファイル添付。Geminiでのみ動作します。"
 }
