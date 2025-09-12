@@ -2,6 +2,7 @@
 .config/ags/scss/_musicmaterial.scss
 .config/ags/scss/_musicwal.scss
 .config/ags/scss/_material.scss
+.config/quickshell/translations/*.json.bak
 /diagnose.result
 /ii_ags.log
 /cache
