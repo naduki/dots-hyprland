@@ -4,3 +4,4 @@
 __pycache__/
 *.py[cod]
 .config/quickshell/ii/.qmlls.ini
+.config/quickshell/translations/*.json.bak
