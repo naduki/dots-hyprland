@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 dots/.config/quickshell/ii/.qmlls.ini
 .update-lock
+dots/.config/quickshell/ii/translations/*.json.bak
